@@ -13,7 +13,7 @@ brew 'bash'
 brew 'bash-completion'
 brew 'gnu-sed', args: ['with-default-names']
 brew 'wget', args: ['with-iri']
-brew 'vim', args['override-system-vi']
+brew 'vim', args: ['override-system-vi']
 brew 'homebrew/dupes/grep'
 brew 'homebrew/dupes/screen'
 brew 'ack'
