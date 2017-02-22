@@ -156,13 +156,7 @@
 [push]
 	default = tracking
 
-[user]
-	name = Marcus Stade
-	email = marcus@stade.se
-	signingkey = C17A2E6D
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[commit]
-	gpgsign = true

@@ -1,0 +1,15 @@
+[user]
+	# Name used in commit messages.
+	name = Marcus Stade
+	# Email used in commit messages.
+	email = marcus@stade.se
+	# Key used to sign commits
+	signingkey = C17A2E6D
+[commit]
+	gpgsign = true
+[shell]
+	# Default SSH username.
+	username = mstade
+[github]
+	# GitHub username for command-line tools.
+	user = mstade
