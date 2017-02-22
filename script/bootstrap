@@ -32,9 +32,6 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# Disable transparency in the menu bar and elsewhere on Yosemite
-defaults write com.apple.universalaccess reduceTransparency -bool true
-
 # Menu bar: hide the Time Machine and User icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
   defaults write "${domain}" dontAutoLoad -array \
@@ -149,6 +146,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
@@ -157,7 +155,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 50
 
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
@@ -360,6 +358,7 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
+
 # Speed up the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0.8
 
@@ -696,8 +695,11 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 
 # Install Sublime Text settings
-rm -rf ~/Library/Application\ Support/Sublime\ Text*/Packages/User
-ln -s ~/.sublime/ ~/Library/Application\ Support/Sublime\ Text*/Packages/User
+SUBLUSERDIR="$(echo ~/Library/Application\ Support/Sublime\ Text*/Packages/User)"
+SUBLPKGDIR="$(echo ~/Library/Application\ Support/Sublime\ Text*/Installed\ Packages)"
+curl -o "${SUBLPKGDIR}/Package\ Control.sublime-package" https://packagecontrol.io/Package%20Control.sublime-package
+rm -rf "${SUBLUSERDIR}"
+ln -s ~/.sublime "${SUBLUSERDIR}"
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" \
