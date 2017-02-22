@@ -5,9 +5,9 @@
 	],
 	"installed_packages":
 	[
+		"EditorConfig",
 		"Material Theme",
-		"Package Control",
-		"WordCount",
-		"EditorConfig"
+		"Material Theme - Appbar",
+		"Package Control"
 	]
 }
