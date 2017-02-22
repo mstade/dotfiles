@@ -1,0 +1,9 @@
+config defaultToCurrentScreen true
+
+# Push Bindings
+bind space:ctrl;alt;cmd push up    bar-resize:screenSizeY
+
+bind up:ctrl;alt;cmd    chain push up    bar-resize:screenSizeY*3/4 | push up    bar-resize:screenSizeY*2/4 | push up    bar-resize:screenSizeY*1/4
+bind down:ctrl;alt;cmd  chain push down  bar-resize:screenSizeY*3/4 | push down  bar-resize:screenSizeY*2/4 | push down  bar-resize:screenSizeY*1/4
+bind left:ctrl;alt;cmd  chain push left  bar-resize:screenSizeX*3/4 | push left  bar-resize:screenSizeX*2/4 | push left  bar-resize:screenSizeX*1/4
+bind right:ctrl;alt;cmd chain push right bar-resize:screenSizeX*3/4 | push right bar-resize:screenSizeX*2/4 | push right bar-resize:screenSizeX*1/4
