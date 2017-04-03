@@ -39,6 +39,9 @@ cask 'vagrant'
 cask 'virtualbox'
 cask 'sketch'
 cask 'slate'
+cask 'flux'
+cask 'google-chrome'
+cask 'aerial'
 mas 'Xcode', id: 497799835
 mas 'Keynote', id: 409183694
 mas 'iMovie', id: 408981434
