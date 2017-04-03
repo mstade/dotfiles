@@ -22,6 +22,7 @@ config.tests/
 *.xcodeproj/xcuserdata/
 
 # Ignore temporary generated files.
+*.icloud
 *.rej
 *.swp
 *~
